@@ -6,7 +6,7 @@ import MainContent from "./components/MainContent";
 function App() {
 	const [ animeList, SetAnimeList] = useState([]);
 	const [topAnime,SetTopAnime] = useState([]);
-	const [search, setSearch] = useState("");
+	const [search, SetSearch] = useState("");
 
 
 	const TopAnime = async () =>  {
@@ -14,6 +14,19 @@ function App() {
 		.then(res => res.json());
 
 		SetTopAnime(temp.top.slice(0,10));
+	}
+
+	const HandleSearch = e => {
+		e.preventDefault();
+
+		FetchAnime(search);
+	}
+
+	const FetchAnime = async (query) => {
+		const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort`)
+		.then(res => res.json());
+
+		SetAnimeList(temp.results)
 	}
 
 	useEffect(() => {
@@ -30,7 +43,12 @@ function App() {
 				<Sidebar
 					topAnime={topAnime}/>
 
-			<MainContent />
+			<MainContent
+				HandleSearch={HandleSearch}
+				search={search}
+				SetSearch={SetSearch}
+				animeList={animeList}
+			/>
 			</div>
 		</div>
 	);
