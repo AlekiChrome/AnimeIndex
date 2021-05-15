@@ -1,1 +1,1 @@
-![wireframe](src/assets/Low fidelity Anime Index.png)
+![wireframe](public/Low fidelity Anime Index.png)
