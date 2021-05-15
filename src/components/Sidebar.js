@@ -1,24 +1,21 @@
 import React from "react";
 
-const Sidebar = () => {
+const Sidebar = ({ topAnime }) => {
     return (
         <aside>
             <nav>
             <h3>Top Anime</h3>
-            <a href="#"
-               target="_blank"
-               rel="noreferrer">Demon Slayer
-            </a>
+            {topAnime.map(anime => (
+                  <a
+                  href={anime.url}
+                  target="_blank"
+                  key={anime.mal_id}
+                  rel="noreferrer">
+                      { anime.title }
+               </a>
+            ))}
 
-            <a href="#"
-               target="_blank"
-               rel="noreferrer">Attack on Titan
-            </a>
 
-            <a href="#"
-               target="_blank"
-               rel="noreferrer">Promised NeverLand
-            </a>
             </nav>
         </aside>
     )
