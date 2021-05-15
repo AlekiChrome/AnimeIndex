@@ -2,10 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .header {
-    font-family: 'Fira Sans', sans-serif;
+
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -19,4 +20,43 @@
             color: rgb(247, 93, 119);
         }
     }
+}
+
+.sidebar {
+    display: flex;
+
+    // aside {
+    //     flex: 1 1 250px;
+    //     max-width: 250px;
+    //     padding-right: 16px;
+    // }
+
+        nav {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        h3 {
+            color: #AAA;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        a {
+            display: block;
+            padding: 8px 16px;
+            text-align: left;
+            color: #888;
+            font-size: 16px;
+            margin-bottom: 16px;
+            background-color: #EEE;
+            border-radius:20px;
+            text-decoration: none;
+            transition:0.4s;
+
+            &:hover {
+                background-color:#313131;
+                color: rgb(247, 93, 119);
+            }
+        }
 }
