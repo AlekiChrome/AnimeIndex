@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    font-family: 'Fira Sans', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    h1 {
+        color: #AAA;
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+
+        strong  {
+            color: rgb(247, 93, 119);
+        }
+    }
+}
